@@ -1,4 +1,4 @@
-var fontSize = 40, speed = 1;
+var fontSize = 30, speed = 1;
 var streams = [];
 var symbol;
 let maxNumberOfSymbol = 30;
@@ -7,7 +7,7 @@ function setup() {
     var cnv = createCanvas(windowWidth, windowHeight);
     background(0, 15, 2);
     cnv.parent('sketch-holder');
-    maxNumberOfSymbol = round(windowHeight/fontSize);
+    maxNumberOfSymbol = round(windowHeight / fontSize);
     symbol = new Symbol(
         width / 2,
         height / 2,
@@ -33,9 +33,9 @@ function draw() {
     });
 }
 
-/*function windowResized() {
-    resizeCanvas(window.innerWidth, window.innerHeight);
-}*/
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+}
 
 function Symbol(x, y, speed) {
     this.x = x;
