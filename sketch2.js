@@ -1,7 +1,7 @@
 var fontSize = 30, speed = 1;
 var streams = [];
 var symbol;
-let maxNumberOfSymbol = 1;
+let maxNumberOfSymbol = 30;
 document.documentElement.style.overflow = 'hidden';
 function setup() {
     var cnv = createCanvas(windowWidth, windowHeight);
