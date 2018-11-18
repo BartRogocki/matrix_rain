@@ -1,4 +1,4 @@
-var fontSize = 40, speed = 1;
+var fontSize = 30, speed = 1;
 var streams = [];
 var symbol;
 let maxNumberOfSymbol = 30;
