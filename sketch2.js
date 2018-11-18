@@ -1,18 +1,19 @@
 var fontSize = 30, speed = 1;
 var streams = [];
 var symbol;
-
+let maxNumberOfSymbol = 1;
+document.documentElement.style.overflow = 'hidden';
 function setup() {
-    var cnv = createCanvas(window.innerWidth, window.innerHeight);
+    var cnv = createCanvas(windowWidth, windowHeight);
     background(0, 15, 2);
     cnv.parent('sketch-holder');
+    maxNumberOfSymbol = round(windowHeight/fontSize);
     symbol = new Symbol(
         width / 2,
         height / 2,
         speed);
     symbol.setSymbol();
     textSize(fontSize);
-    //textFont('Consolas');
     var x = 0;
     for (var i = 0; i <= width / fontSize; i++) {
         var stream = new Stream();
@@ -21,6 +22,7 @@ function setup() {
         x += fontSize;
     }
     console.log(streams);
+    console.log(maxNumberOfSymbol);
 }
 
 function draw() {
@@ -31,9 +33,9 @@ function draw() {
     });
 }
 
-function windowResized(){
+/*function windowResized() {
     resizeCanvas(window.innerWidth, window.innerHeight);
-  }
+}*/
 
 function Symbol(x, y, speed) {
     this.x = x;
@@ -80,7 +82,7 @@ function Symbol(x, y, speed) {
 
 function Stream() {
     this.symbols = [];
-    this.totalSymbols = round(random(5, 35));
+    this.totalSymbols = round(random(8, maxNumberOfSymbol));
     this.speed = round(random(5, 10));
 
     this.generateStream = function (x, y) {
